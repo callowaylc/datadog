@@ -2,21 +2,16 @@ package main
 
 import(
 	"os"
-	"log"
-	"fmt"
-	"github.com/DataDog/datadog-go/statsd"
+	_ "log"
+	_ "fmt"
+	_ "github.com/DataDog/datadog-go/statsd"
+  a "github.com/callowaylc/datadog-go-cli"
 )
 
 func init() {
-
+  a.InitOptions()
 }
 
 func main() {
-  c, err := statsd.New("127.0.0.1:8125")
-  if err != nil {
-      log.Fatal(err)
-  }
-
-  fmt.Printf("%+v\n", c)
 	os.Exit(0)
 }
