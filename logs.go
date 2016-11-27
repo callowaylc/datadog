@@ -9,7 +9,7 @@ import (
 
 type LogFields log.Fields
 
-func InitLog() {
+func InitLogs() {
   log.SetFormatter(&log.JSONFormatter{})
   log.SetOutput(os.Stderr)
   log.SetLevel(log.InfoLevel)
