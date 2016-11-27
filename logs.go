@@ -16,9 +16,12 @@ func InitLogs() {
 }
 
 func Logs(message string, fields LogFields) {
-  if fields == nil {
-    fields = LogFields{}
+  options := GetOptions()
+  if options.Logs {
+    if fields == nil {
+      fields = LogFields{}
+    }
+    fields["time"] = time.Now()  
+    log.WithFields(map[string]interface{}(fields)).Info(fmt.Sprintf("%v", message))
   }
-  fields["time"] = time.Now()  
-  log.WithFields(map[string]interface{}(fields)).Info(fmt.Sprintf("%v", message)) 
 }

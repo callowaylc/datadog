@@ -12,7 +12,7 @@ type Options struct {
   Type string `required:"true" short:"t" long:"type" description:"metric type ex. counter, histogram, gauge"`
   Value interface{} `required:"true" short:"v" long:"value" description:"metric value for our given type"`
   Tags []string `long:"tag" description:"metric tags"`
-
+  Logs bool `long:"logs" description:"enables logging to stderr"`
 }
 var o Options
 
