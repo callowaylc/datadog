@@ -1,4 +1,4 @@
-package datadog_go_cli
+package cli
 
 import(
   "os"
@@ -36,6 +36,7 @@ func InitOptions() {
   }
 }
 
-func GetOptions() (Options, error) {
-  return o, nil
+func GetOptions() Options {
+  return o
 }
+

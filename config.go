@@ -1,1 +1,1 @@
-package datadog_go_cli
+package cli

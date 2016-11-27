@@ -10,6 +10,9 @@ import(
 
 func init() {
   a.InitOptions()
+  a.Logs("options", a.LogFields{
+    "options": a.GetOptions(),
+  })
 }
 
 func main() {
