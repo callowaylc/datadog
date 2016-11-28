@@ -29,7 +29,6 @@ func InitOptions() {
     case flags.ErrTag:
       panic(err)
     default:
-      panic(err)
       os.Exit(2)
     }
   

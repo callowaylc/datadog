@@ -6,7 +6,7 @@ import(
 	_ "log"
 	_ "fmt"
 	"github.com/DataDog/datadog-go/statsd"
-  a "github.com/callowaylc/datadog-go-cli"
+  a "github.com/callowaylc/datadog"
 )
 
 func init() {
