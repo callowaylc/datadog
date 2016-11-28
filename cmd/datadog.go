@@ -41,10 +41,16 @@ func main() {
       options.Name, options.ValueFloat, options.Tags, options.Rate,
     )
   case "Timing":
+    panic("not implemented!")
     //err = c.Timing(
     //  options.Name, options.ValueString.(time.Duration), options.Tags, options.Rate,
-    //)    
+    //)
+  case "TimeInMilliseconds ":
+    err = c.TimeInMilliseconds(
+      options.Name, options.ValueFloat, options.Tags, options.Rate,
+    )        
   case "ServiceCheck":
+    panic("not implemented!")
     //err := c.Histogram(
     //  options.Name, options.Value.(float64), options.Tags, options.Rate
     //)    
