@@ -15,7 +15,7 @@ func InitLogs() {
   log.SetLevel(log.InfoLevel)
 }
 
-func Logs(message string, fields LogFields) {
+func Logs(message string, fields LogFields, ) {
   options := GetOptions()
   if options.Logs {
     if fields == nil {

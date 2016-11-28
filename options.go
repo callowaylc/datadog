@@ -2,15 +2,18 @@ package cli
 
 import(
   "os"
-  _ "fmt"
+  "fmt"
 	flags "github.com/jessevdk/go-flags"
 )
 
 type Options struct {
-  Address string `default:"127.0.0.1:8125" short:"a" long:"address" description:"statsd agent host:port" default:"127.0.0.1:8125"`
+  Address string `default:"127.0.0.1:8125" short:"a" long:"address" description:"statsd agent host:port"`
   Name string `required:"true" short:"n" long:"name" description:"metric name"`
   Type string `required:"true" short:"t" long:"type" description:"metric type ex. counter, histogram, gauge"`
-  Value interface{} `required:"true" short:"v" long:"value" description:"metric value for our given type"`
+  ValueFloat float64 `long:"value-float" description:"float based metric value"`
+  ValueInt int64 `long:"value-int" description:"int based metric value"`
+  ValueString string `long:"value-string" description:"string based metric value"`
+  Rate float64 `default:"1" short:"r" long:"rate" description:"sample rate"`
   Tags []string `long:"tag" description:"metric tags"`
   Logs bool `long:"logs" description:"enables logging to stderr"`
 }
@@ -25,18 +28,18 @@ func InitOptions() {
       os.Exit(0)  
     case flags.ErrTag:
       panic(err)
-      os.Exit(1)
     default:
+      panic(err)
       os.Exit(2)
     }
   
   } else if err != nil {
     panic(err)
-    os.Exit(1)
   }
+
+  fmt.Println("asdf")
 }
 
 func GetOptions() Options {
   return o
 }
-
