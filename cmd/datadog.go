@@ -2,9 +2,6 @@ package main
 
 import(
 	"os"
-  _ "time"
-	_ "log"
-	_ "fmt"
 	"github.com/DataDog/datadog-go/statsd"
   a "github.com/callowaylc/datadog"
 )
