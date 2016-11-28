@@ -4,7 +4,7 @@ ENV GOBIN /go/bin
 RUN true && \
 	mkdir -p /go/src/github.com/callowaylc/datadog && \
 	cp -rf . /go/src/github.com/callowaylc/datadog && \
-	go install ./cmd/datadog.go
+	go install ./cmd/datadog
 
-ENTRYPOINT ["/go/datadog"]
+ENTRYPOINT ["/go/bin/datadog"]
 CMD ["-h"]
